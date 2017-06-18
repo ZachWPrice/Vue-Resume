@@ -1,0 +1,200 @@
+[
+	{
+		"title": "Personal",
+		"items": {
+			"title": "Zachary Price",
+			"objective": "Looking for a work environment that enables me to contribute to the goals of the company while offering room for growth and advancement.",
+			"address": "203 Starcrest Drive Orem, Ut 84058",
+			"email": "zacharyprice135@gmail.com",
+			"phone": "(801) 368-9650"
+		}
+	},
+	{
+		"title": "Experience",
+		"items": [
+			{
+				"title": "Ancestry",
+				"location": {
+					"city": "Lehi",
+					"state": "UT"
+				},
+				"jobTitle": "User Interface Web Development Intern",
+				"dateRange": {
+					"isOngoing": false,
+					"start": {
+						"month": "September",
+						"year": "2016"
+					},
+					"end": {
+						"month": "September",
+						"year": "2017"
+					}
+				},
+				"description": "Worked with the Search User Interface team. Integrated with other teams to update and standardize the Ancestry, search frontend. Spearheaded a project with the search-service team to rework an outdated and inefficient service."
+			},
+			{
+				"title": "WhiteCanyon Software",
+				"location": {
+					"city": "American Fork",
+					"state": "UT"
+				},
+				"jobTitle": "Enterprise Technical Support Agent",
+				"dateRange": {
+					"isOngoing": false,
+					"start": {
+						"month": "September",
+						"year": "2014"
+					},
+					"end": {
+						"month": "September",
+						"year": "2016"
+					}
+				},
+				"description": "Worked with a team of support agents to resolve clients’ software problems, questions, or concerns. Contributed programming to WhiteCanyon’s cloud activation website, homepage, and an upcoming customer portal."
+			},
+			{
+				"title": "Myler Disability",
+				"location": {
+					"city": "American Fork",
+					"state": "UT"
+				},
+				"jobTitle": "Paralegal",
+				"dateRange": {
+					"isOngoing": false,
+					"start": {
+						"month": "September",
+						"year": "2013"
+					},
+					"end": {
+						"month": "August",
+						"year": "2014"
+					}
+				},
+				"description": "Aided clients with the preparation of legal documents and readied exhibit files to be used by attorneys at their hearings."
+			},
+			{
+				"title": "H.A.P Alaska Transportation",
+				"location": {
+					"city": "Anchorage",
+					"state": "Alaska"
+				},
+				"jobTitle": "Luggage Handler",
+				"dateRange": {
+					"isOngoing": false,
+					"start": {
+						"month": "May",
+						"year": "2013"
+					},
+					"end": {
+						"month": "August",
+						"year": "2013"
+					}
+				},
+				"description": "Worked as a team to load and offload luggage. Responsible for checking baggage to verify it would arrive in the correct location at its designated time. Aided in the resolution of customer concerns."
+			}
+		]
+	},
+	{
+		"title": "Education",
+		"items": [{
+				"title": "Computer Science Major",
+				"school": "Utah Valley University",
+				"location": {
+					"city": "Orem",
+					"state": "UT"
+				},
+				"dateRange": {
+					"isOngoing": true,
+					"start": {
+						"isStart": true,
+						"month": "September",
+						"year": "2011"
+					}
+				}
+			},
+			{
+				"title": "High School Diploma",
+				"school": "Pleasant Grove High School",
+				"location": {
+					"city": "Pleasant Grove",
+					"state": "UT"
+				},
+				"dateRange": {
+					"isOngoing": false,
+					"start": {
+						"month": "August",
+						"year": "2008"
+					},
+					"end": {
+						"month": "May",
+						"year": "2011"
+					}
+				}
+			}
+		]
+	},
+	{
+		"title": "Projects",
+		"items": [{
+			"title": "WhiteCanyon Cloud Activation Website",
+			"overview": "Improving Functionality",
+			"description": "Developed alongside the WhiteCanyon Software’s development team, added administrative and visual tools that were not previously  present. Worked in PHP and Javascript using Bootstrap and Morris.js."
+		}]
+	},
+	{
+		"title": "Skills",
+		"items": [{
+				"description": "Well developed abilities to troubleshoot PXE configurations and internet connectivity."
+			},
+			{
+				"description": "Moderate proficiency in software testing, bug tracking/reporting, and network configuration."
+			}
+		]
+	},
+	{
+		"title": "Languages",
+		"items": [{
+				"title": "JavaScript",
+				"description": "Includes experience with JQuery, AngularJS, and others"
+			},
+			{
+				"title": "Node.js",
+				"description": "Experience with npm and packaging understanding"
+			},
+			{
+				"title": "Chai",
+				"description": "Behavior Driven Development experience."
+			},
+			{
+				"title": "PHP",
+				"description": "Flourish ORM experience"
+			},
+			{
+				"title": "C, C++, and C#",
+				"description": "Varying degrees of college and professional experience with each. "
+			},
+			{
+				"title": "SQL",
+				"description": "Updating in-use tables to include data needed for additional functionality."
+			},
+			{
+				"title": "HTML",
+				"description": ""
+			},
+			{
+				"title": "CSS",
+				"description": ""
+			}
+		]
+	},
+	{
+		"title": "Technologies",
+		"items": [
+			"Microsoft Visual Studio",
+			"Microsoft Office",
+			"WinSCP",
+			"PuTTY",
+			"Git"
+		]
+	}
+]
