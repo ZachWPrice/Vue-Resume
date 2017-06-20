@@ -8,27 +8,103 @@
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
-    <div>
-      <div class="expanded row small-text-center">
-        <div class="medium-text-left small-12 medium-6 columns" id = "header">
+    <div id="app">
+
+      <div>
+        <div class="expanded row small-text-center">
+          <div class="medium-text-left small-12 medium-6 columns" id = "header">
+            <div><h2>{{header.title}}</h2></div>
+          </div>
+          <div class="medium-text-right small-12 medium-6 columns" id="personalInfo">
+            <div>{{header.address}}</div>
+            <div>{{header.email}}</div>
+            <div>{{header.phone}}</div>
+          </div>
         </div>
-        <div class="medium-text-right small-12 medium-6 columns" id="personalInfo">
+        <div class="expanded row">
+          <div class = "small-12 columns" id="objective">
+            <hr class="expanded row" /><div><p>{{header.objective}}</p></div>
+          </div>
         </div>
       </div>
-      <div class="expanded row">
-        <div class = "small-12 columns" id="objective">
-        </div>
+      
+      <div class="small-12 columns">
+        <ul class="accordion" id="accordionUL" data-allow-all-closed="true" data-accordion>
+          <li v-for="parentItem in body" class='accordion-item' data-accordion-item>
+            <a :href="'#panel' + parentItem.title" class='accordion-title'><h4>{{parentItem.title}}</h4></a>
+            <div :id="'panel' + parentItem.title" class='accordion-content' data-tab-content>
+                <p class='accordionContent' :id="parentItem.title + 'Content'">
+                  <div v-if="parentItem.title === 'Experience'"> 
+                    <div v-for="item in parentItem.items" class="card">
+                      <div class="card-divider">
+                          <h5>{{item.jobTitle}} &mdash; {{item.title}}</h5>
+                      </div>
+                      <div class="card-section">
+                          <h6 v-if="item.dateRange.isOngoing">{{item.dateRange.start.month}} {{item.dateRange.start.year}} - Present</h6>
+                          <h6 v-else>{{item.dateRange.start.month}} {{item.dateRange.start.year}} - {{item.dateRange.end.month}} {{item.dateRange.end.year}} </h6>
+                          <br />
+                          <p>{{item.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="parentItem.title === 'Education'">
+                    <div v-for="item in parentItem.items" class="card"> 
+                      <div class="card-divider">
+                        <h5>{{item.title}}</h5>
+                      </div>
+                      <div class="card-section">
+                        <h6 v-if="item.dateRange.isOngoing">{{item.dateRange.start.month}} {{item.dateRange.start.year}} - Present</h6>
+                        <h6 v-else>{{item.dateRange.start.month}} {{item.dateRange.start.year}} - {{item.dateRange.end.month}} {{item.dateRange.end.year}} </h6>
+                        <br />
+                        {{item.location.city}}, {{item.location.state}}
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="parentItem.title == 'Projects'">
+                    <div v-for="item in parentItem.items" class="card"> 
+                      <div class="card-divider">
+                        <h5>{{item.title}}</h5>
+                      </div>
+                      <div class="card-section">
+                        {{item.overview}}
+                        <br />
+                        {{item.description}}
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="parentItem.title == 'Skills'">
+                    <div v-for="item in parentItem.items"> 
+                      <p class="accordionContent" :id="item.title + 'content'">
+                        {{item.description}} <br />
+                      </p>
+                    </div>
+                  </div>
+                  <div v-if="parentItem.title == 'Languages'">
+                    <div v-for="item in parentItem.items" class="accordionContent card" :id="item.title + 'content'">
+                      <div class="card-divider">
+                        <h5>{{item.title}}</h5>
+                      </div>
+                      <div class="card-section" v-if="item.description != ''">
+                        {{item.description}}
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="parentItem.title == 'Technologies'">
+                    <p v-for="item in parentItem.items" class="accordionContent" :id="item.title + 'content'">
+                      {{item}}
+                    </p>
+                  </div>
+                </p>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
-    
-    <div class="small-12 columns">
-      <ul class="accordion" id="accordionUL" data-accordion>
-      </ul>
     </div>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/dist/what-input.js"></script>
     <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

@@ -1,3 +1,33 @@
+/*global Vue*/
+/*global $*/
+
+var app;
+
+$.getJSON("resumeData.json", (fileData) => {
+    var header; 
+    var body = [];
+    $.each(fileData, (index, item) => {
+        if (item.title === "Personal") {
+            header = item.items;
+        }
+        else {
+            body.push(item);
+        }
+    });
+    
+    app = new Vue({
+        el: "#app",
+        data: {
+            header, 
+            body
+        }
+    });
+    $(document).foundation();
+});
+
+
+/*
+
 function expFormatter(id, items){
     $.each(items, (index, item) => {
         var temp;
@@ -96,11 +126,10 @@ function techFormatter(id, items){
         $(id).append(temp);
     });
 }
-
 $(document).ready( () => {
-    $.getJSON("resumeData.json", (fileData) => {
+
+/*    $.getJSON("resumeData.json", (fileData) => {
         $.each(fileData, (index, data) => {
-            
             if(data.title != "Personal"){
                 var accordItem =    `<li class='accordion-item' data-accordion-item>
                                         <a href='#panel${data.title}' class='accordion-title'><h4>${data.title}</h4></a>
@@ -111,10 +140,23 @@ $(document).ready( () => {
                 $("#accordionUL").append(accordItem);
             }
             var id = `#${data.title}Content`;
-            switch(data.title){
+            
+            if(data.title !="Personal"){
+                app.myData.Body[data.title] = data.items;
+            }
+            else{
+                app.myData.Header[data.title] = data.items;
+            }
+
+           
+            
+            /*switch(data.title){
                 case "Personal": 
-                    var item = data.items;
-                    $("#header").append(`<div><h2>${item.title}</h2></div>`);
+                    myData.push({"Personal": data.items});
+                    
+                    
+                    
+                   /* $("#header").append(`<div><h2>${item.title}</h2></div>`);
                     
                     $("#personalInfo").append(`<div>${item.address}</div>
                                                 <div>${item.email}</div>
@@ -124,27 +166,34 @@ $(document).ready( () => {
                     
                     return;
                 case "Experience":
-                    expFormatter(id, data.items);
+                    myData.push({"Personal": data.items});
+                    //expFormatter(id, data.items);
                     break;
                 case "Education":
-                    eduFormatter(id, data.items);
+                    myData.push({"Personal": data.items});
+                    //eduFormatter(id, data.items);
                     break;
                 case "Projects":
-                    projFormatter(id, data.items);
+                    myData.push({"Personal": data.items});
+                    //projFormatter(id, data.items);
                     break;
                 case "Skills":
-                    skillFormatter(id, data.items);
+                    myData.push({"Personal": data.items});
+                    //skillFormatter(id, data.items);
                     break;
                 case "Languages":
-                    langFormatter(id, data.items);
+                    //langFormatter(id, data.items);
                     break;
                 case "Technologies":
-                    techFormatter(id, data.items);
+                    //techFormatter(id, data.items);
                     break;
                 default:
                     break;
             }
         });
+        
+
+        
         $(document).foundation();
     });
-});
+});*/
